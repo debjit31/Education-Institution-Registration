@@ -2,6 +2,7 @@ package com.example.airlinebookingsystem;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -40,6 +41,8 @@ public class personal_info extends AppCompatActivity {
         setContentView(R.layout.personal_info);
 
         mdatabase = FirebaseDatabase.getInstance().getReference().child("reg");
+
+        if(TextUtils.isEmpty())
 
         mName = (EditText) findViewById(R.id.nameEd);
         mAddress = (EditText) findViewById(R.id.addressEd);
