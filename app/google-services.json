@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "206465621107",
+    "firebase_url": "https://airlinebookingsystem-f5ac0.firebaseio.com",
+    "project_id": "airlinebookingsystem-f5ac0",
+    "storage_bucket": "airlinebookingsystem-f5ac0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206465621107:android:e24782e9498969eca51e06",
+        "android_client_info": {
+          "package_name": "com.example.airlinebookingsystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206465621107-s0oatcm4iqkdn04lvc840tr633nhjme4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.airlinebookingsystem",
+            "certificate_hash": "c067834ee4f94fa345cb816e13cecd6f99b41062"
+          }
+        },
+        {
+          "client_id": "206465621107-cmj0ob5cff1fppmffcgmsv44d7j20v3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv5t0YeZy6Yw8_MLXiBBf4a1XBXkVVXDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206465621107-cmj0ob5cff1fppmffcgmsv44d7j20v3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

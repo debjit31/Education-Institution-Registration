@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".academic_details"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/heading_aca"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Academic Details"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp"/>
+
+
+    <!--Class 10 Percentage-->
+    <LinearLayout
+        android:id="@+id/class10"
+        android:layout_below="@+id/heading_aca"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/class10_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\t\tClass X \n Percentage :- "
+            android:layout_margin="5dp"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+
+        <EditText
+            android:id="@+id/class10_ed"
+            android:inputType="number"
+            android:layout_height="50dp"
+            android:layout_width="250dp"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/class10_head"
+            android:hint="Xth Percentage"/>
+    </LinearLayout>
+
+    <!--Class 12 Percentage-->
+    <LinearLayout
+        android:id="@+id/class12"
+        android:layout_below="@+id/class10"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/class12_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\t\tClass 12 \n Percentage- "
+            android:layout_margin="5dp"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+
+        <EditText
+            android:id="@+id/class12_ed"
+            android:inputType="number"
+            android:layout_height="50dp"
+            android:layout_width="250dp"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/class12_head"
+            android:hint="XII th Percentage"/>
+    </LinearLayout>
+
+    <!--JEE RAnk-->
+    <LinearLayout
+        android:id="@+id/jee"
+        android:layout_below="@+id/class12"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/jee_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JEE Rank :-  "
+            android:layout_margin="5dp"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+
+        <EditText
+            android:id="@+id/jee_ed"
+            android:inputType="number"
+            android:layout_height="50dp"
+            android:layout_width="250dp"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/jee_head"
+            android:hint="Jee Rank"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/dept"
+        android:layout_below="@+id/jee"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dept_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Department of \n Choice :-  "
+            android:layout_margin="5dp"
+            android:textSize="23sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+
+        <EditText
+            android:id="@+id/dept_ed"
+            android:inputType="text"
+            android:layout_height="50dp"
+            android:layout_width="200dp"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@+id/jee_head"
+            android:hint="Department"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dept"
+        android:layout_marginTop="45dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_back"
+        android:text="Next"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

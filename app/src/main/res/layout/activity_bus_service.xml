@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bus_service"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/bus_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bus Service Info"
+        android:background="@drawable/input_fields_back"
+        android:gravity="center_horizontal"
+        android:textSize="40sp"
+        android:textStyle="bold|italic"/>
+
+    <Switch
+        android:switchPadding="20dp"
+        android:switchMinWidth="30dp"
+        android:id="@+id/switch1"
+        android:layout_below="@+id/bus_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="45dp"
+        android:checked="false"
+        android:gravity="center"
+        android:text="Do you want bus service ?"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/nextBtn2"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/switch1"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_back"
+        android:text="Next"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+
+</RelativeLayout>

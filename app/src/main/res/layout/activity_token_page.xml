@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TokenPage"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/confirm_header"
+        android:layout_width="300dp"
+        android:text="Confirmation Page"
+        android:textSize="34sp"
+        android:layout_margin="15dp"
+        android:textColor="#000000"
+        android:textStyle="italic|bold"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/token_msg"
+        android:layout_below="@+id/confirm_header"
+        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:text="Your Registration is Recorded.\n We will reach to your if your application is approved.\n Use the temporary Registration ID to check your Status."
+        android:textAlignment="center"
+        android:textStyle="italic|bold"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp" />
+
+    <TextView
+        android:id="@+id/temp_regid_head"
+        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:text="Your Registration ID is "
+        android:layout_below="@+id/token_msg"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="#012FCD"
+        android:layout_margin="30dp"
+        android:textSize="40sp"
+        android:textStyle="italic|bold" />
+
+    <TextView
+        android:id="@+id/token"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/temp_regid_head"
+        android:layout_centerHorizontal="true"
+        android:text="Token"
+        android:textIsSelectable="true"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/gotoHome"
+        android:layout_below="@+id/token"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="35dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_back"
+        android:text="Home"
+        android:padding="5dp"
+        android:textSize="32sp"/>
+
+</RelativeLayout>
