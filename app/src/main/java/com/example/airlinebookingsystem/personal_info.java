@@ -42,8 +42,6 @@ public class personal_info extends AppCompatActivity {
 
         mdatabase = FirebaseDatabase.getInstance().getReference().child("reg");
 
-        if(TextUtils.isEmpty())
-
         mName = (EditText) findViewById(R.id.nameEd);
         mAddress = (EditText) findViewById(R.id.addressEd);
         mPhone = (EditText) findViewById(R.id.phoneEd);
@@ -79,6 +77,7 @@ public class personal_info extends AppCompatActivity {
 
     public void add_pers_data() {
 
+
         try{
             String name = mName.getText().toString().trim();
             String email = mEmail.getText().toString().trim();
@@ -86,31 +85,34 @@ public class personal_info extends AppCompatActivity {
             String address = mAddress.getText().toString().trim();
             String dob = mDob.getText().toString().trim();
 
-            HashMap<String, String> newMap = new HashMap<String, String>();
-            newMap.put("name", name);
-            newMap.put("email", email);
-            newMap.put("phone", phone);
-            newMap.put("gender", gender);
-            newMap.put("address", address);
-            newMap.put("dob", dob);
+            if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(address) || TextUtils.isEmpty(dob)) {
+                Toast.makeText(this, "Fields cannot be empty!!!", Toast.LENGTH_SHORT).show();
+            } else {
+                HashMap<String, String> newMap = new HashMap<String, String>();
+                newMap.put("name", name);
+                newMap.put("email", email);
+                newMap.put("phone", phone);
+                newMap.put("gender", gender);
+                newMap.put("address", address);
+                newMap.put("dob", dob);
 
-            reg_id = String.valueOf(System.currentTimeMillis());
+                reg_id = String.valueOf(System.currentTimeMillis());
 
-            mdatabase.child(reg_id).setValue(newMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        Intent intent = new Intent(personal_info.this, academic_details.class);
-                        intent.putExtra("register", reg_id);
-                        startActivity(intent);
+                mdatabase.child(reg_id).setValue(newMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Intent intent = new Intent(personal_info.this, academic_details.class);
+                            intent.putExtra("register", reg_id);
+                            startActivity(intent);
 
 
-
+                        }
                     }
-                }
-            });
+                });
+            }
         }catch (Exception e){
-            Toast.makeText(this, "Fields cannot be Empty!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Exception Occured" + e, Toast.LENGTH_SHORT).show();
         }
         finally {
             mName.setText("");
@@ -119,6 +121,9 @@ public class personal_info extends AppCompatActivity {
             mAddress.setText("");
             mDob.setText("");
         }
+
+
+
 
 
 

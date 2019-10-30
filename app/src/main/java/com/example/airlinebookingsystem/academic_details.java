@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -67,27 +68,34 @@ public class academic_details extends AppCompatActivity {
         String mjee = jee.getText().toString().trim();
         String mdept = dept.getText().toString().trim();
 
-        Map<String, Object> objectMap = new HashMap<>();
-        objectMap.put("percentage_10th", mclass10);
-        objectMap.put("percentage_12th", mclass12);
-        objectMap.put("jeeRank", mjee);
-        objectMap.put("dept", mdept);
+        if(TextUtils.isEmpty(mclass10) || TextUtils.isEmpty(mclass12) || TextUtils.isEmpty(mjee) || TextUtils.isEmpty(mdept)){
+
+            Toast.makeText(this, "Fields Cannot be Empty", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Map<String, Object> objectMap = new HashMap<>();
+            objectMap.put("percentage_10th", mclass10);
+            objectMap.put("percentage_12th", mclass12);
+            objectMap.put("jeeRank", mjee);
+            objectMap.put("dept", mdept);
 
 
-        mdatabase.updateChildren(objectMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    Intent intent = new Intent(academic_details.this, bus_service.class);
-                    intent.putExtra("register", reg_id);
-                    startActivity(intent);
-                    //Toast.makeText(academic_details.this, "Success!!", Toast.LENGTH_SHORT).show();
-                    class10.setText("");
-                    class12.setText("");
-                    jee.setText("");
-                    dept.setText("");
+            mdatabase.updateChildren(objectMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()){
+                        Intent intent = new Intent(academic_details.this, bus_service.class);
+                        intent.putExtra("register", reg_id);
+                        startActivity(intent);
+                        //Toast.makeText(academic_details.this, "Success!!", Toast.LENGTH_SHORT).show();
+                        class10.setText("");
+                        class12.setText("");
+                        jee.setText("");
+                        dept.setText("");
+                    }
                 }
-            }
-        });
+            });
+        }
+
     }
 }

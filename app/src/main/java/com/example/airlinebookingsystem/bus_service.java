@@ -25,11 +25,6 @@ public class bus_service extends AppCompatActivity {
     private LinearLayout busLayout;
     private Button next;
 
-    /*private EditText pickup_dest;
-    private EditText dropoff_dest;
-    //private Button bus_next;*/
-
-    //private Button nextPage;
     private DatabaseReference mdatabase;
     private String reg_id;
     String msg;
@@ -43,13 +38,7 @@ public class bus_service extends AppCompatActivity {
         mdatabase = FirebaseDatabase.getInstance().getReference().child("reg").child(reg_id);
 
         bus = (Switch) findViewById(R.id.switch1);
-        //busLayout = (LinearLayout) findViewById(R.id.bus_det_lay);
         next = (Button) findViewById(R.id.nextBtn2);
-
-        //pickup_dest = (EditText) findViewById(R.id.pickup_ed);
-       // dropoff_dest = (EditText) findViewById(R.id.dropoff_ed);
-        //bus_next = (Button) findViewById(R.id.nextBtn);
-        //nextPage = (Button) findViewById(R.id.nextBtn2);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +75,6 @@ public class bus_service extends AppCompatActivity {
         Map<String, Object> newMap = new HashMap<>();
         newMap.put("services",msg);
 
-        //reg_id = getIntent().getStringExtra("register");
         mdatabase.updateChildren(newMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,10 +27,13 @@ public class search extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String regid = searchId.getText().toString();
-                Intent intent = new Intent(search.this, results.class);
-                intent.putExtra("regid", regid);
-                startActivity(intent);
-                //Toast.makeText(search.this, regid, Toast.LENGTH_SHORT).show();
+                if(TextUtils.isEmpty(regid)){
+                    Toast.makeText(search.this, "Field Cannot be Empty", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(search.this, results.class);
+                    intent.putExtra("regid", regid);
+                    startActivity(intent);
+                }
             }
         });
     }
